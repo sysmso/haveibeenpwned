@@ -1,6 +1,7 @@
 import json
 import requests
 import time
+import sys
 from tabulate import tabulate
 
 api_url = "https://haveibeenpwned.com/api/v2/breachedaccount/%s%s"
@@ -35,6 +36,7 @@ id = 0
 l=list()
 
 for data in datas:
+    sys.stdout.write("Scan in progress...")
     if data["mail"]:
         try:
             mail = data["mail"]
@@ -43,10 +45,10 @@ for data in datas:
                 pwneds = breach(mail)
                 l.append([mail, pwneds])
             if rep == [429]:
-                print("Too many requests")
+                sys.stdout.write("Too many requests\n")
                 break
-            time.sleep(5)
+            time.sleep(2)
         except KeyError:
             mail = 1
 l.sort()
-print(tabulate(l, headers=["Adresse", "Breach"], tablefmt="rst"))
+sys.stdout.write(tabulate(l, headers=["Adresse", "Breach"], tablefmt="rst"))
