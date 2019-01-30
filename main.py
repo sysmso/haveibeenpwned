@@ -53,5 +53,6 @@ for data in datas:
         except KeyError:
             mail = 1
 l.sort()
+sys.stdout.write("\n")
 sys.stdout.write(tabulate(l, headers=["Adress", "Breach"], tablefmt="rst"))
 sys.stdout.write("\n")
