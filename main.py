@@ -42,6 +42,7 @@ for data in datas:
             rep = check(mail)
             if rep == [200]:
                 pwneds = breach(mail)
+                sys.stdout.write("Found one vulnerability...\n")
                 l.append([mail, pwneds])
             if rep == [429]:
                 sys.stdout.write("Too many requests\n")
@@ -50,5 +51,5 @@ for data in datas:
         except KeyError:
             mail = 1
 l.sort()
-sys.stdout.write(tabulate(l, headers=["Adresse", "Breach"], tablefmt="rst"))
+sys.stdout.write(tabulate(l, headers=["Adress", "Breach"], tablefmt="rst"))
 sys.stdout.write("\n")
