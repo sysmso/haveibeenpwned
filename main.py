@@ -31,12 +31,11 @@ def breach(email):
 with open("liste.json", "r") as read_file:
     datas = json.load(read_file)
 
-mail_user = {}
-id = 0
-l=list()
+l = list()
+
+sys.stdout.write("Scan in progress...\n")
 
 for data in datas:
-    sys.stdout.write("Scan in progress...")
     if data["mail"]:
         try:
             mail = data["mail"]
@@ -52,3 +51,4 @@ for data in datas:
             mail = 1
 l.sort()
 sys.stdout.write(tabulate(l, headers=["Adresse", "Breach"], tablefmt="rst"))
+sys.stdout.write("\n")
