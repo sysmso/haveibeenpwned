@@ -10,3 +10,8 @@ JSON Example :
 ## How to run
 
 Just type : python3 main.py
+
+## Requirements
+
+- python3
+- python-tabulate (https://pypi.org/project/tabulate/)
