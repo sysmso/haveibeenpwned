@@ -43,6 +43,8 @@ for data in datas:
             if rep == [200]:
                 pwneds = breach(mail)
                 sys.stdout.write("Found one vulnerability...\n")
+                sys.stdout.write(".")
+                sys.stdout.flush()
                 l.append([mail, pwneds])
             if rep == [429]:
                 sys.stdout.write("Too many requests\n")
