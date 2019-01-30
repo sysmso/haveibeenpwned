@@ -43,9 +43,9 @@ for data in datas:
             mail = data["mail"]
             rep = check(mail)
             if rep == [200]:
-                nb =+ 1
+                nb += 1
                 pwneds = breach(mail)
-                sys.stdout.write("Found %s vulnerability..." % nb)
+                sys.stdout.write("Found %s compromised mail adress..." % nb)
                 sys.stdout.flush()
                 l.append([mail, pwneds])
             if rep == [429]:
