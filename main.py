@@ -33,7 +33,7 @@ with open("liste.json", "r") as read_file:
 
 l = list()
 
-sys.stdout.write("Scan in progress...\n")
+sys.stdout.write("Scan in progress...")
 
 for data in datas:
     if data["mail"]:
@@ -42,8 +42,7 @@ for data in datas:
             rep = check(mail)
             if rep == [200]:
                 pwneds = breach(mail)
-                sys.stdout.write("Found one vulnerability...\n")
-                sys.stdout.write(".")
+                sys.stdout.write("Found one vulnerability...")
                 sys.stdout.flush()
                 l.append([mail, pwneds])
             if rep == [429]:
